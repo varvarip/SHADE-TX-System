@@ -1,0 +1,3 @@
+Temperature: 27 deg. Celcius
+ 
+ 
