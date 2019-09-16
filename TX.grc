@@ -635,7 +635,7 @@
     </param>
     <param>
       <key>gain_dB_ch0</key>
-      <value>20</value>
+      <value>60</value>
     </param>
     <param>
       <key>nco_freq_ch0</key>
@@ -715,7 +715,7 @@
     </param>
     <param>
       <key>rf_freq</key>
-      <value>433e6</value>
+      <value>1.43e9</value>
     </param>
     <param>
       <key>samp_rate</key>

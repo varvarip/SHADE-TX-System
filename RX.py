@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Fri Aug 30 18:09:19 2019
+# Generated: Mon Sep 16 22:59:25 2019
 ##################################################
 
 from distutils.version import StrictVersion
@@ -84,7 +84,7 @@ class top_block(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_0 = qtgui.time_sink_c(
         	1024, #size
         	samp_rate, #samp_rate
-        	"", #name
+        	"Baseband waveform", #name
         	1 #number of inputs
         )
         self.qtgui_time_sink_x_0.set_update_time(0.10)
@@ -132,12 +132,98 @@ class top_block(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0.pyqwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_time_sink_x_0_win)
+        self.qtgui_freq_sink_x_0_0 = qtgui.freq_sink_c(
+        	1024, #size
+        	firdes.WIN_BLACKMAN_hARRIS, #wintype
+        	0, #fc
+        	5e6, #bw
+        	"PSD after carrier removal", #name
+        	1 #number of inputs
+        )
+        self.qtgui_freq_sink_x_0_0.set_update_time(0.10)
+        self.qtgui_freq_sink_x_0_0.set_y_axis(-140, 10)
+        self.qtgui_freq_sink_x_0_0.set_y_label('Relative Gain', 'dB')
+        self.qtgui_freq_sink_x_0_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, 0.0, 0, "")
+        self.qtgui_freq_sink_x_0_0.enable_autoscale(False)
+        self.qtgui_freq_sink_x_0_0.enable_grid(False)
+        self.qtgui_freq_sink_x_0_0.set_fft_average(1.0)
+        self.qtgui_freq_sink_x_0_0.enable_axis_labels(True)
+        self.qtgui_freq_sink_x_0_0.enable_control_panel(False)
+
+        if not True:
+          self.qtgui_freq_sink_x_0_0.disable_legend()
+
+        if "complex" == "float" or "complex" == "msg_float":
+          self.qtgui_freq_sink_x_0_0.set_plot_pos_half(not True)
+
+        labels = ['', '', '', '', '',
+                  '', '', '', '', '']
+        widths = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        colors = ["blue", "red", "green", "black", "cyan",
+                  "magenta", "yellow", "dark red", "dark green", "dark blue"]
+        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
+                  1.0, 1.0, 1.0, 1.0, 1.0]
+        for i in xrange(1):
+            if len(labels[i]) == 0:
+                self.qtgui_freq_sink_x_0_0.set_line_label(i, "Data {0}".format(i))
+            else:
+                self.qtgui_freq_sink_x_0_0.set_line_label(i, labels[i])
+            self.qtgui_freq_sink_x_0_0.set_line_width(i, widths[i])
+            self.qtgui_freq_sink_x_0_0.set_line_color(i, colors[i])
+            self.qtgui_freq_sink_x_0_0.set_line_alpha(i, alphas[i])
+
+        self._qtgui_freq_sink_x_0_0_win = sip.wrapinstance(self.qtgui_freq_sink_x_0_0.pyqwidget(), Qt.QWidget)
+        self.top_layout.addWidget(self._qtgui_freq_sink_x_0_0_win)
+        self.qtgui_freq_sink_x_0 = qtgui.freq_sink_c(
+        	1024, #size
+        	firdes.WIN_BLACKMAN_hARRIS, #wintype
+        	1430e6, #fc
+        	5e6, #bw
+        	"PSD after antenna", #name
+        	1 #number of inputs
+        )
+        self.qtgui_freq_sink_x_0.set_update_time(0.10)
+        self.qtgui_freq_sink_x_0.set_y_axis(-140, 10)
+        self.qtgui_freq_sink_x_0.set_y_label('Relative Gain', 'dB')
+        self.qtgui_freq_sink_x_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, 0.0, 0, "")
+        self.qtgui_freq_sink_x_0.enable_autoscale(False)
+        self.qtgui_freq_sink_x_0.enable_grid(False)
+        self.qtgui_freq_sink_x_0.set_fft_average(1.0)
+        self.qtgui_freq_sink_x_0.enable_axis_labels(True)
+        self.qtgui_freq_sink_x_0.enable_control_panel(False)
+
+        if not True:
+          self.qtgui_freq_sink_x_0.disable_legend()
+
+        if "complex" == "float" or "complex" == "msg_float":
+          self.qtgui_freq_sink_x_0.set_plot_pos_half(not True)
+
+        labels = ['', '', '', '', '',
+                  '', '', '', '', '']
+        widths = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        colors = ["blue", "red", "green", "black", "cyan",
+                  "magenta", "yellow", "dark red", "dark green", "dark blue"]
+        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
+                  1.0, 1.0, 1.0, 1.0, 1.0]
+        for i in xrange(1):
+            if len(labels[i]) == 0:
+                self.qtgui_freq_sink_x_0.set_line_label(i, "Data {0}".format(i))
+            else:
+                self.qtgui_freq_sink_x_0.set_line_label(i, labels[i])
+            self.qtgui_freq_sink_x_0.set_line_width(i, widths[i])
+            self.qtgui_freq_sink_x_0.set_line_color(i, colors[i])
+            self.qtgui_freq_sink_x_0.set_line_alpha(i, alphas[i])
+
+        self._qtgui_freq_sink_x_0_win = sip.wrapinstance(self.qtgui_freq_sink_x_0.pyqwidget(), Qt.QWidget)
+        self.top_layout.addWidget(self._qtgui_freq_sink_x_0_win)
         self.limesdr_source_0 = limesdr.source('1D424A48F1332A', 0, '')
         self.limesdr_source_0.set_sample_rate(samp_rate)
-        self.limesdr_source_0.set_center_freq(1.43e9, 0)
+        self.limesdr_source_0.set_center_freq(1430e6, 0)
         self.limesdr_source_0.set_bandwidth(5e6,0)
         self.limesdr_source_0.set_digital_filter(500e3,0)
-        self.limesdr_source_0.set_gain(20,0)
+        self.limesdr_source_0.set_gain(40,0)
         self.limesdr_source_0.set_antenna(255,0)
 
         self.digital_gmsk_demod_0 = digital.gmsk_demod(
@@ -164,9 +250,11 @@ class top_block(gr.top_block, Qt.QWidget):
         ##################################################
         self.connect((self.blks2_packet_decoder_0, 0), (self.blocks_file_sink_0, 0))
         self.connect((self.digital_costas_loop_cc_0, 0), (self.digital_gmsk_demod_0, 0))
+        self.connect((self.digital_costas_loop_cc_0, 0), (self.qtgui_freq_sink_x_0_0, 0))
         self.connect((self.digital_costas_loop_cc_0, 0), (self.qtgui_time_sink_x_0, 0))
         self.connect((self.digital_gmsk_demod_0, 0), (self.blks2_packet_decoder_0, 0))
         self.connect((self.limesdr_source_0, 0), (self.digital_costas_loop_cc_0, 0))
+        self.connect((self.limesdr_source_0, 0), (self.qtgui_freq_sink_x_0, 0))
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "top_block")
