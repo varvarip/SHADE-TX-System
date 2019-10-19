@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Sat Oct 19 17:46:20 2019
+# Generated: Sat Oct 19 18:00:40 2019
 ##################################################
 
 from distutils.version import StrictVersion
@@ -171,7 +171,7 @@ class top_block(gr.top_block, Qt.QWidget):
         self.limesdr_sink_0.set_sample_rate(samp_rate)
         self.limesdr_sink_0.set_center_freq(fc, 0)
         self.limesdr_sink_0.set_bandwidth(5e6,0)
-        self.limesdr_sink_0.set_gain(55,0)
+        self.limesdr_sink_0.set_gain(60,0)
         self.limesdr_sink_0.set_antenna(255,0)
         self.limesdr_sink_0.calibrate(5e6, 0)
 
